@@ -9,14 +9,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'CV App',
-      home: PreViewScreen(title: 'PreView'),
+      initialRoute: '/pv',
       routes: {
-        '/preview': (context) => PreViewScreen(title: 'PreView'),
-        '/edit': (context) => EditPage(title: 'PreView'),
+        '/pv': (context) =>  PreView(),
+        '/edit': (context) => EditScreen(),
       },
     );
   }

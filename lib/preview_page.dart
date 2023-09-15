@@ -1,24 +1,20 @@
 import 'package:cv_app/edit_page.dart';
 import 'package:flutter/material.dart';
 
-class PreViewPage extends StatefulWidget {
-  const PreViewPage({super.key, required this.title});
-  const PreViewPage.name(this.name{super.key});
+class PreView extends StatefulWidget {
 
-  final String title;
-  final String name;
   @override
-  State<PreViewPage> createState() => _PreViewPageState();
+  State<PreView> createState() => _PreViewState();
 }
 
-class _PreViewPageState extends State<PreViewPage> {
-
+class _PreViewState extends State<PreView> {
+  EditPage info = EditPage();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(title.title),
+          title: Text('PreView'),
         ),
         body: Container(
           decoration: BoxDecoration(
@@ -26,19 +22,33 @@ class _PreViewPageState extends State<PreViewPage> {
           ),
           child: Column(
             children: [
-              Text(
-                ,
-                style: TextStyle(fontSize: 20),
-              ),
+              info.info.page(),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/edit');
                   },
                   child: Text('Edit'))
+
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+
+
+class PreviewInfo extends StatefulWidget {
+  const PreviewInfo({Key? key}) : super(key: key);
+
+  @override
+  State<PreviewInfo> createState() => _PreviewInfoState();
+}
+
+class _PreviewInfoState extends State<PreviewInfo> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
