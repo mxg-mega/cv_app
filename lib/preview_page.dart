@@ -44,13 +44,18 @@ class _PreViewPageState extends State<PreViewPage> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Text('$initialName', style: TextStyle(fontSize: 30),),
-                    SizedBox(height: 5,),
-                    Text('$initialEmail', style: TextStyle(fontSize: 10),),
-                    SizedBox(height: 10,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text('$initialName', style: TextStyle(fontSize: 25,),),
+                        SizedBox(height: 5,),
+                        Text('$initialEmail', style: TextStyle(fontSize: 10),),
+                      ],
+                    ),
+                    SizedBox(height: 20, child: Divider(thickness: 3.0,color: Colors.black,),),
                     Text('Slack Username:', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
                     Text('$initialSlack', style: TextStyle(fontSize: 20),),
                     SizedBox(height: 10,),
