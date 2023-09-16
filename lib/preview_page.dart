@@ -1,54 +1,58 @@
 import 'package:cv_app/edit_page.dart';
 import 'package:flutter/material.dart';
 
-class PreView extends StatefulWidget {
+class PreViewPage extends StatefulWidget {
+  const PreViewPage({Key? key}) : super(key: key);
 
   @override
-  State<PreView> createState() => _PreViewState();
+  State<PreViewPage> createState() => _PreViewPageState();
 }
 
-class _PreViewState extends State<PreView> {
-  EditPage info = EditPage();
+class _PreViewPageState extends State<PreViewPage> {
+  String initialName = 'Muhammad Aliyu Abubakar';
+
+  void syncName(String newName) {
+    setState(() {
+      initialName = newName;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.brown,
         appBar: AppBar(
           title: Text('PreView'),
         ),
-        body: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-          ),
-          child: Column(
-            children: [
-              info.info.page(),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/edit');
-                  },
-                  child: Text('Edit'))
-
-            ],
-          ),
+        body: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Column(
+                children: [
+                  Text('$initialName', style: TextStyle(fontSize: 30),),
+                ],
+              ),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EditPage(
+                        initialName: initialName,
+                        updateName: syncName,
+                      ),
+                    ),
+                  );
+                },
+                child: Text('Edit'),),
+          ],
         ),
       ),
     );
-  }
-}
-
-
-
-class PreviewInfo extends StatefulWidget {
-  const PreviewInfo({Key? key}) : super(key: key);
-
-  @override
-  State<PreviewInfo> createState() => _PreviewInfoState();
-}
-
-class _PreviewInfoState extends State<PreviewInfo> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
