@@ -1,9 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:cv_app/preview_page.dart';
 
 class EditPage extends StatefulWidget {
+
   final String initialName;
   final String initialEmail;
   final String initialSlack;
@@ -87,7 +85,7 @@ class _EditPageState extends State<EditPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit'),
+        title: const Text('Edit'),
         backgroundColor: Colors.deepOrange.shade700,
       ),
       backgroundColor: Colors.deepOrange.shade700,
@@ -104,7 +102,7 @@ class _EditPageState extends State<EditPage> {
                   'Full Name',
                   'Name',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5.0,
                 ),
                 infoField(
@@ -113,7 +111,7 @@ class _EditPageState extends State<EditPage> {
                   'Email Address',
                   'Email',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5.0,
                 ),
                 infoField(
@@ -137,7 +135,7 @@ class _EditPageState extends State<EditPage> {
                   'GitHub Username',
                   'GitHub Username',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5.0,
                 ),
                 Container(
@@ -165,7 +163,7 @@ class _EditPageState extends State<EditPage> {
                   onPressed: () {
                     onSaveChanges();
                   },
-                  child: Icon(Icons.save),
+                  child: const Icon(Icons.save),
                 )
               ],
             ),

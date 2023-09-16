@@ -1,4 +1,3 @@
-import 'package:cv_app/edit_page.dart';
 import 'package:cv_app/preview_page.dart';
 import 'package:flutter/material.dart';
 
@@ -11,14 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CV App',
-      initialRoute: '/pv',
-      routes: {
-        '/pv': (context) =>  const PreViewPage(),
-        // '/edit': (context) => EditScreen(),
-      },
+      home: PreViewPage(),
     );
   }
 }
