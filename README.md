@@ -19,4 +19,4 @@ If you are running this project for the first Time, you require:
 
 
 
-you can see this project's pre view on appetize: https://appetize.io/app/qw7cg2j44iamnfskbvmes5h2li?device=pixel4&osVersion=11.0&scale=75
+you can see this project's pre view here: https://appetize.io/app/qw7cg2j44iamnfskbvmes5h2li?device=pixel4&osVersion=11.0&scale=75
