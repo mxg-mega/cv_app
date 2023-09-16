@@ -66,6 +66,7 @@ class _EditPageState extends State<EditPage> {
             label: Text(label),
             hintText: hint,
             icon: infoIcon,
+            iconColor: Colors.deepOrange.shade500
           ),
         ),
       ),
@@ -87,8 +88,9 @@ class _EditPageState extends State<EditPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit'),
+        backgroundColor: Colors.deepOrange.shade700,
       ),
-      backgroundColor: Colors.brown,
+      backgroundColor: Colors.deepOrange.shade700,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -149,15 +151,17 @@ class _EditPageState extends State<EditPage> {
                       decoration: const InputDecoration(
                         hintText: 'Bio',
                         label: Text('Bio'),
-                        icon: const Icon(Icons.person),
+                        icon: Icon(Icons.description),
+                        iconColor: Colors.red,
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5.0,
                 ),
                 FloatingActionButton(
+                  backgroundColor: Colors.red.shade500,
                   onPressed: () {
                     onSaveChanges();
                   },

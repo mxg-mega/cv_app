@@ -29,16 +29,17 @@ class _PreViewPageState extends State<PreViewPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.deepOrange.shade900,
         appBar: AppBar(
-          title: Text('PreView'),
+          title: const Text('PreView'),
+          backgroundColor: Colors.deepOrange.shade700,
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -50,40 +51,47 @@ class _PreViewPageState extends State<PreViewPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text('$initialName', style: TextStyle(fontSize: 25,),),
-                        SizedBox(height: 5,),
-                        Text('$initialEmail', style: TextStyle(fontSize: 10),),
+                        Text('$initialName', style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                        const SizedBox(height: 5,),
+                        Text('$initialEmail', style: const TextStyle(fontSize: 13),),
                       ],
                     ),
-                    SizedBox(height: 20, child: Divider(thickness: 3.0,color: Colors.black,),),
-                    Text('Slack Username:', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
-                    Text('$initialSlack', style: TextStyle(fontSize: 20),),
-                    SizedBox(height: 10,),
-                    Text('Github Username:', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
-                    Text('$initialGithub', style: TextStyle(fontSize: 20),),
-                    SizedBox(height: 10,),
-                    Text('Bio:', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
-                    Text('$initialBio', style: TextStyle(fontSize: 20),),
+                    const SizedBox(height: 20, child: Divider(thickness: 3.0,color: Colors.black,),),
+                    const Text('Slack Username:', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                    Text('$initialSlack', style: const TextStyle(fontSize: 20),),
+                    const SizedBox(height: 10,),
+                    const Text('Github Username:', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                    Text('$initialGithub', style: const TextStyle(fontSize: 20),),
+                    const SizedBox(height: 10,),
+                    const Text('Bio:', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                    Text('$initialBio', style: const TextStyle(fontSize: 20),),
                   ],
                 ),
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => EditPage(
-                          initialName: initialName,
-                          initialEmail: initialEmail,
-                          initialSlack: initialSlack,
-                          initialGithub: initialGithub,
-                          initialBio: initialBio,
-                          update: sync,
-                        ),
-                      ),
-                    );
-                  },
-                  child: Text('Edit'),),
+          const SizedBox(height: 5.0,),
+              Row(
+                children: [
+                  const Expanded(child: SizedBox()),
+                  ElevatedButton(
+                    style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => Colors.deepOrange.shade300),),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditPage(
+                              initialName: initialName,
+                              initialEmail: initialEmail,
+                              initialSlack: initialSlack,
+                              initialGithub: initialGithub,
+                              initialBio: initialBio,
+                              update: sync,
+                            ),
+                          ),
+                        );
+                      },
+                      child: Icon(Icons.edit_document),),
+                ],
+              ),
             ],
           ),
         ),
